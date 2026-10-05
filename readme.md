@@ -48,6 +48,10 @@ streamlit run dashboard.py
 
 Dashboard akan otomatis terbuka di browser pada alamat `http://localhost:8501`.
 
+## 🌐 Dashboard Online
+
+Dashboard yang sudah di-deploy ke Streamlit Community Cloud dapat diakses melalui tautan pada berkas `url.txt`.
+
 ## 📓 Notebook Analisis
 
 Seluruh proses analisis data (data wrangling, EDA, visualisasi, hingga kesimpulan) didokumentasikan lengkap pada `notebook.ipynb`. Notebook sudah dijalankan (executed) sehingga seluruh output dan visualisasi sudah tersimpan di dalamnya. Menjalankan ulang notebook dari folder `submission` akan menghasilkan kembali `dashboard/main_data.csv` dan `dashboard/day_data.csv`.
@@ -57,6 +61,12 @@ Seluruh proses analisis data (data wrangling, EDA, visualisasi, hingga kesimpula
 - **Pertanyaan 1:** Pengaruh musim & kondisi cuaca terhadap rata-rata penyewaan sepeda harian. Musim Panas tertinggi (±5.644/hari), Dingin terendah (±2.604/hari), dan cuaca hujan/salju menekan penyewaan hingga ±63% dibanding cuaca cerah.
 - **Pertanyaan 2:** Pola penyewaan sepeda per jam pada hari kerja vs libur/akhir pekan. Hari kerja berpola bimodal (puncak ±08:00 dan 17:00-18:00), akhir pekan berpuncak di sekitar 12:00-15:00.
 - **Analisis lanjutan:** Segmentasi manual (binning) waktu dalam sehari, disilangkan dengan tipe hari, untuk menentukan prioritas redistribusi armada.
+
+## 🧹 Catatan Data Cleaning
+
+- Nilai kelembapan (`hum`) = 0 yang tidak valid diganti melalui interpolasi berdasarkan urutan tanggal dan jam.
+- Label musim disesuaikan dengan bulan sebenarnya pada data (kode 1 = Dingin, 2 = Semi, 3 = Panas, 4 = Gugur), karena pemetaan pada dokumentasi dataset tidak cocok dengan data.
+- Kategori cuaca 4 (hujan lebat/salju) diberi label sendiri agar tidak hilang dari analisis.
 
 ## 🗂️ Sumber Data
 

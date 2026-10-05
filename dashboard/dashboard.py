@@ -220,4 +220,4 @@ st.success(
     "karena permintaan pada segmen ini paling rendah."
 )
 
-st.caption("Dashboard ini dibangun sebagai dari submission proyek analisis data")
+st.caption("Dashboard ini dibangun dari submission proyek analisis data")
